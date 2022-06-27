@@ -1,4 +1,7 @@
-### Hi there 👋
+# STUNNING VISUALS
+### Motion Graphics & VFX Design
+
+![Motion Graphics & VFX Design | Matthew Penkala](https://uploads-ssl.webflow.com/612bed10f5fea63618336469/6173db678d8dbc67ec982236_MTP-SV_OPEN-GRAPH_HOME.jpg)
 
 <!--
 **matthewpenkala/matthewpenkala** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
