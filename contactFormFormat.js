@@ -74,13 +74,13 @@ $(document).ready(function () {
         }
     });
     // Form submission
-    $('#contact-form').add("form[data-name*='Contact'],[aria-label='Contact Form']").on('submit', function (event) {
-        event.preventDefault();
-        var phoneNumber = teleInput.val();
-        var cleanedNumber = cleanPhoneNumber(phoneNumber);
-        teleInput.val(cleanedNumber);
-        $(this).submit();
-    });
+    // $('#contact-form').add("form[data-name*='Contact'],[aria-label='Contact Form']").on('submit', function (event) {
+    //     event.preventDefault();
+    //     var phoneNumber = teleInput.val();
+    //     var cleanedNumber = cleanPhoneNumber(phoneNumber);
+    //     teleInput.val(cleanedNumber);
+    //     $(this).submit();
+    // });
 });
 var validatePhoneOnKeyUpAttached = false;
 function validateForm() {
