@@ -7,11 +7,13 @@ var waitForGlobal = function(key, callback) {
         }, 100);
     }
 };
+
 function loadScript(t, o) {
     var a = document.createElement('script');
     a.type = 'text/javascript', a.src = t, a.onload = o, document.head.appendChild(a);
 }
-if (!(window.innerWidth >= 768 && window.innerWidth <= 972 || window.innerWidth < 768)) {
+
+function navServicesTippy() {
     loadScript('https://unpkg.com/@popperjs/core@2', function() {
         loadScript('https://unpkg.com/tippy.js@6', function() {
             waitForGlobal('tippy', function() {
@@ -71,3 +73,13 @@ if (!(window.innerWidth >= 768 && window.innerWidth <= 972 || window.innerWidth 
         });
     });
 }
+
+if (!(window.innerWidth >= 768 && window.innerWidth <= 972 || window.innerWidth < 768)) {
+    navServicesTippy();
+}
+
+$(window).on('resize', function() {
+    if (!(window.innerWidth >= 768 && window.innerWidth <= 972 || window.innerWidth < 768)) {
+        navServicesTippy();
+    }
+});
