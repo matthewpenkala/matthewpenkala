@@ -8,10 +8,7 @@ var waitForGlobal = function(key, callback) {
     }
 };
 
-function loadScript(t, o) {
-    var a = document.createElement('script');
-    a.type = 'text/javascript', a.src = t, a.onload = o, document.head.appendChild(a);
-}
+function loadScript(a,b){var c=document.createElement("script");c.type="text/javascript",c.src=a,c.onload=b,document.head.appendChild(c)}
 
 function navServicesTippy() {
     loadScript('https://unpkg.com/@popperjs/core@2', function() {
@@ -21,6 +18,12 @@ function navServicesTippy() {
                     content: 'Finalizing development!',
                     allowHTML: false,
                     placement: 'bottom',
+                    hideOnClick: false
+                });
+                tippy("div.footer .nav > a[href*='/services'] > div:not(.nav-item-line)", {
+                    content: 'Finalizing development!',
+                    allowHTML: false,
+                    placement: 'right',
                     hideOnClick: false
                 });
                 tippy(".navbar-dropdown-column a[href*='/services'] > div", {
@@ -44,7 +47,27 @@ function navServicesTippy() {
             });
         });
     });
+
     $(document).ready(function() {
+        $(".navbar-dropdown-column a[href*='/services'],div.footer .nav>a[href*='/services']").closest('.nav').addBack().parent('div').addBack().add($('header').closest("div[class*='wrapper']").find('.navbar-menu').parent('div').addBack().add('#NAV-SERVICES')).each(function() {
+            var $element = $(this);
+            $element.on('click', function(event) {
+                var navServicesElm = $($element).parent().find('*').addBack().filter("a[href*='/services'],#NAV-SERVICES").first();
+                function shakeAndRemoveClass() {
+                    $(navServicesElm).addClass('error-shake');
+                    setTimeout(function() {
+                        $(navServicesElm).removeClass('error-shake');
+                    }, 1000);
+                }
+                var rect = navServicesElm[0].getBoundingClientRect();
+                var mouseX = event.clientX;
+                var mouseY = event.clientY;
+                if (mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom) {
+                    shakeAndRemoveClass();
+                }
+            });
+        });
+
         $('#NAV-SERVICES').click(false).css({
             'pointer-events': 'none',
             'cursor': 'not-allowed'
@@ -58,7 +81,7 @@ function navServicesTippy() {
         }).closest('#NAV-SERVICES').bind('contextmenu', function(e) {
             return false;
         });
-        $(".navbar-dropdown-column a[href*='/services']").click(false).css({
+        $(".navbar-dropdown-column a[href*='/services']").add("div.footer .nav > a[href*='/services']").click(false).css({
             'pointer-events': 'none',
             'cursor': 'not-allowed'
         }).children('div').css({
@@ -68,18 +91,19 @@ function navServicesTippy() {
             'pointer-events': 'none',
             'opacity': '0%',
             'display': 'none'
-        }).closest(".navbar-dropdown-column a[href*='/services']").bind('contextmenu', function(e) {
+        }).closest("a[href*='/services']").bind('contextmenu', function(e) {
             return false;
         });
     });
 }
 
-if (!(window.innerWidth >= 768 && window.innerWidth <= 972 || window.innerWidth < 768)) {
-    navServicesTippy();
-}
-
-$(window).on('resize', function() {
+(function() {
     if (!(window.innerWidth >= 768 && window.innerWidth <= 972 || window.innerWidth < 768)) {
         navServicesTippy();
     }
-});
+    $(window).on('resize', function() {
+        if (!(window.innerWidth >= 768 && window.innerWidth <= 972 || window.innerWidth < 768)) {
+            navServicesTippy();
+        }
+    });
+}());
