@@ -1,0 +1,15 @@
+User-agent: *
+
+Disallow: /
+
+Allow: *CNAME*
+Allow: */MTP_RESUME_2023.pdf
+Allow: /*.svg$
+Allow: /README.md
+
+Disallow: /*.html$
+Disallow: /*.pdf$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /distJS/*
+Disallow: /assets/*
