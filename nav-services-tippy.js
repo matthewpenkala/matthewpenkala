@@ -11,8 +11,8 @@ var waitForGlobal = function(key, callback) {
 function loadScript(a,b){var c=document.createElement("script");c.type="text/javascript",c.src=a,c.onload=b,document.head.appendChild(c)}
 
 function navServicesTippy() {
-    loadScript('https://unpkg.com/@popperjs/core@2', function() {
-        loadScript('https://unpkg.com/tippy.js@6', function() {
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js', function() {
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy-bundle.umd.min.js', function() {
             waitForGlobal('tippy', function() {
                 tippy('#NAV-SERVICES > div', {
                     content: 'Finalizing development!',
