@@ -1,5 +1,5 @@
-# STUNNING VISUALS
-### Motion Graphics & VFX Design
+# [STUNNING VISUALS](https://matthewpenkala.com/?REEL=OPEN)
+### [Motion Graphics & VFX Design](https://matthewpenkala.com/)
 
 ![Motion Graphics & VFX Design | Matthew Penkala](https://uploads-ssl.webflow.com/612bed10f5fea63618336469/6173db678d8dbc67ec982236_MTP-SV_OPEN-GRAPH_HOME.jpg)
 
