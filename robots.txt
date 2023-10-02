@@ -2,10 +2,12 @@ User-agent: *
 
 Allow: /robots.txt$
 Allow: /*.json$
+Disallow: /
 
 Allow: *CNAME*
 Allow: */MTP_RESUME_2023.pdf
 Allow: /*.svg$
+Disallow: /assets/*
 Allow: https://src.matthewpenkala.com/assets/videoReel_Schema.json
 Allow: /README.md
 
@@ -14,6 +16,3 @@ Disallow: /*.pdf$
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /distJS/*
-# Disallow: /assets/*
-
-Disallow: /
