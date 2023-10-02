@@ -14,4 +14,4 @@ Disallow: /*.pdf$
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /distJS/*
-Disallow: /assets/*
+# Disallow: /assets/*
