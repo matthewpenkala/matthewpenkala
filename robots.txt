@@ -2,7 +2,7 @@ User-agent: *
 
 Allow: /robots.txt$
 Allow: /*.json$
-Disallow: /
+# Disallow: /
 
 Allow: *CNAME*
 Allow: */MTP_RESUME_2023.pdf
