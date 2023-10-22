@@ -19,6 +19,11 @@ Disallow: /distJS/*
 User-agent: Twitterbot
 Allow: /
 Allow: /assets/*
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: https://src.matthewpenkala.com/*
+Allow: *
 
 User-agent: facebookexternalhit
 Allow: /
