@@ -18,6 +18,7 @@ Disallow: /distJS/*
 
 User-agent: Twitterbot
 Allow: /
+Allow: /assets/*
 
 User-agent: facebookexternalhit
 Allow: /
