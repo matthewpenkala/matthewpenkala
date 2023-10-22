@@ -16,3 +16,10 @@ Disallow: /*.pdf$
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /distJS/*
+
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
