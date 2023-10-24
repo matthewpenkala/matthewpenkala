@@ -4,7 +4,7 @@ Allow: /robots.txt$
 Allow: /*.json$
 
 Allow: *CNAME*
-Allow: */MTP_RESUME_2023.pdf
+Allow: */MTP_RESUME_2024.pdf
 Allow: /*.svg$
 Allow: https://src.matthewpenkala.com/assets/videoReel_Schema.json
 Allow: /README.md
