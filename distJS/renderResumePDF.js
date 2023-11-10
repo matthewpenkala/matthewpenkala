@@ -53,7 +53,7 @@ Webflow.push(function () {
                 'position': 'absolute',
                 'opacity': '100%'
             }).height('100vh');
-            pdfjsLib.getDocument('https://src.matthewpenkala.com/MTP_RESUME_2024.pdf').promise.then(function (pdf) {
+            pdfjsLib.getDocument('https://cache.matthewpenkala.com/MTP_RESUME_2024.pdf').promise.then(function (pdf) {
                 const renderingPromises = [];
 
                 for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
