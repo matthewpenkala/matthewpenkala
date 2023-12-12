@@ -19,7 +19,7 @@
         });
     }
     preloadAssets(assetUrls, function () {
-        console.log(assetUrls);
+        javascript:void(0)
     });
 }());
 
@@ -39,9 +39,11 @@ Webflow.push(function () {
             });
         }
     } else if (mobileDetect.ua.toLowerCase().includes("applewebkit") && mobileDetect.ua.toLowerCase().includes("safari") && mobileDetect.ua.toLowerCase().includes("macintosh") && !mobileDetect.ua.toLowerCase().includes("chrome")) {
-		$("#OPEN-RESUME-HD, #OPEN-RESUME-FT").find("*").addBack().css("cursor","pointer").filter("a").attr("href", "javascript:void(0)").click(function () {
-            const newWindow = window.open("/RESUME.pdf", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100");
-            newWindow.focus();
+        $("#OPEN-RESUME-HD, #OPEN-RESUME-FT").find("*").addBack().css("cursor", "pointer").attr("href", "javascript:void(0)");
+        document.querySelectorAll("#OPEN-RESUME-HD, #OPEN-RESUME-FT").forEach(element => {
+            element.addEventListener('click', function () {
+                window.open("/RESUME.pdf", "_blank");
+            });
         });
     } else {
         const containerWidth = `${round(1.02308 * (100 * parseFloat(17 / 11)))}vh`;
