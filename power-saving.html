@@ -8,7 +8,7 @@
 <body>
 <div>Power Saving Mode? <code id="powerSavingMode"></code></div>
 <script type="module">
-import {detectPowerSavingMode} from './power-saving.js';
+import {detectPowerSavingMode} from './power-saving.min.js';
 document.addEventListener('DOMContentLoaded', () => {
   let requestIdleCallback = window.requestIdleCallback || queueMicrotask;
   requestIdleCallback(()=>{
