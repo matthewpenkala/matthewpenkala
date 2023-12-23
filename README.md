@@ -1,13 +1,13 @@
-# [STUNNING VISUALS](https://matthewpenkala.com/?REEL=OPEN)
-### [Motion Graphics & VFX Design](https://matthewpenkala.com/)
+# **[MATTHEW PENKALA &nbsp; ★](https://matthewpenkala.com/)**
+### [Senior Motion Designer ｜ Motion Graphics Artist](https://matthewpenkala.com/)
 
-![Motion Graphics & VFX Design | Matthew Penkala](https://uploads-ssl.webflow.com/612bed10f5fea63618336469/6173db678d8dbc67ec982236_MTP-SV_OPEN-GRAPH_HOME.jpg)
+[![Senior Motion Designer ｜ Motion Graphics Artist](https://src.matthewpenkala.com/assets/MTP-SV_OPEN-GRAPH_HOME.jpg)](https://matthewpenkala.com/video-reel)
+
 
 <!--
 **matthewpenkala/matthewpenkala** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
-
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
 - 👯 I’m looking to collaborate on ...
