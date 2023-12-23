@@ -15,6 +15,10 @@ jobs:
      uses: cicirello/generate-sitemap@v1.10.0
      with:
        base-url-path: https://src.matthewpenkala.com/
+   - name: Beautify Sitemap
+     uses: ChristophWurst/xmllint-action@v1.2.1
+     with:
+       xml-file: sitemap.xml
    - name: Commit and push sitemap
      run: |
        git config --local user.email "action@github.com"
