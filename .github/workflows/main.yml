@@ -1,0 +1,14 @@
+name: Custom Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sitemap_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sitemap Generator
+        uses: cgs-earth/sitemap-generator@0.2.0
+      # Add other steps for building and deploying your site here
