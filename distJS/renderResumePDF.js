@@ -1,31 +1,43 @@
 (function () {
-    const assetUrls = [];
+    const imageUrls = [];
+    const backgroundImage = window.getComputedStyle(document.getElementById("pdf-container")).getPropertyValue("background-image");
     const regex = /url\("(https:\/\/.*?\.\w+)"/g;
-    const match = window.getComputedStyle(document.getElementById('pdf-container')).getPropertyValue('background-image').matchAll(regex);
-    for (const m of match) {
-        assetUrls.push(m[1]);
+    let match;
+
+    // Extract image URLs from background image
+    while ((match = regex.exec(backgroundImage)) !== null) {
+        imageUrls.push(match[1]);
     }
-    function preloadAssets(assetUrls, callback) {
+
+    function preloadImages(urls, callback) {
         let loadedCount = 0;
-        assetUrls.forEach(url => {
-            const image = new Image();
-            image.onload = image.onerror = function () {
+
+        // Preload images
+        urls.forEach(url => {
+            const img = new Image();
+            img.onload = img.onerror = function () {
                 loadedCount++;
-                if (loadedCount === assetUrls.length) {
+                if (loadedCount === urls.length) {
                     callback();
                 }
             };
-            image.src = url;
+            img.src = url;
         });
     }
-    preloadAssets(assetUrls, function () {
+
+    // Preload images and execute code after all images are loaded
+    preloadImages(imageUrls, function () {
         javascript:void(0)
     });
-}());
+})();
 
+const cachedResumeURL = "https://cache.matthewpenkala.com/MTP_RESUME_2024.pdf";
+
+// Webflow initialization
 var Webflow = Webflow || [];
 Webflow.push(function () {
-    function round(number) {
+    // Function to round a number
+    function roundNumber(number) {
         return Math.round(number);
     }
 
@@ -33,26 +45,47 @@ Webflow.push(function () {
 
     if (mobileDetect.mobile() || mobileDetect.phone() || 478 >= window.innerWidth) {
         if (mobileDetect.is("iPhone") || mobileDetect.is("iPod") || mobileDetect.is("iPad") || 991 >= window.innerWidth) {
+            // Handle click event for specific devices or window width
             $("#OPEN-RESUME-HD, #OPEN-RESUME-FT").attr("href", "javascript:void(0)").click(function () {
                 const newWindow = window.open("/RESUME.pdf", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100");
                 newWindow.focus();
             });
         }
     } else if (mobileDetect.ua.toLowerCase().includes("applewebkit") && mobileDetect.ua.toLowerCase().includes("safari") && mobileDetect.ua.toLowerCase().includes("macintosh") && !mobileDetect.ua.toLowerCase().includes("chrome")) {
+        // Handle click event for specific Safari browser
         $("#OPEN-RESUME-HD, #OPEN-RESUME-FT").find("*").addBack().css("cursor", "pointer").attr("href", "javascript:void(0)");
         document.querySelectorAll("#OPEN-RESUME-HD, #OPEN-RESUME-FT").forEach(element => {
-            element.addEventListener('click', function () {
+            element.addEventListener("click", function () {
                 window.open("/RESUME.pdf", "_blank");
             });
         });
     } else {
-        const containerWidth = `${round(1.02308 * (100 * parseFloat(17 / 11)))}vh`;
+        // Handle other cases
+        const containerWidth = `${roundNumber(1.02308 * (100 * parseFloat(17 / 11)))}vh`;
         const openResumeHD = document.getElementById("OPEN-RESUME-HD");
         const openResumeFT = document.getElementById("OPEN-RESUME-FT");
         const pdfContainer = document.getElementById("pdf-container");
         const pdfLightbox = document.getElementById("pdf-lightbox");
 
+        // Init pdfjs web worker
+        function waitForPdfjsLib() {
+            if (typeof pdfjsLib !== 'undefined') {
+                fetch("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js")
+                    .then(response => response.blob())
+                    .then(blob => {
+                        var workerScript = URL.createObjectURL(blob);
+                        pdfjsLib.GlobalWorkerOptions.workerSrc = workerScript;
+                    })
+                    .catch(error => console.error('Error:', error));
+            } else {
+                setTimeout(waitForPdfjsLib, 50); // Check again after 50 milliseconds
+            }
+        }
+        waitForPdfjsLib();
+
+        // Click event for opening resume
         $(openResumeHD).add($(openResumeFT)).click(function () {
+            // Manipulate PDF container and load PDF document
             $("#DOWNLOAD-RESUME").closest("div[class*='wrapper']").css("display", "none").children("div:not(a)").css("opacity", "0%");
             pdfContainer.innerHTML = "";
             $(pdfContainer).width(containerWidth).css({
@@ -61,11 +94,13 @@ Webflow.push(function () {
                 opacity: "100%"
             }).height("100vh");
 
-            pdfjsLib.getDocument("https://cache.matthewpenkala.com/MTP_RESUME_2024.pdf").promise.then(function (pdf) {
-                const pagePromises = [];
+            pdfjsLib.getDocument(cachedResumeURL).promise.then(function (pdf) {
+                const promises = [];
 
-                for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
-                    const pagePromise = pdf.getPage(pageNumber).then(function (page) {
+                // Render pages of the PDF document
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const promise = pdf.getPage(i).then(function (page) {
+                        // Manipulate PDF container, render pages, and handle scrolling
                         bodyScrollLock.disableBodyScroll("#pdf-lightbox");
                         bodyScrollLock.disableBodyScroll("#pdf-container");
 
@@ -85,23 +120,17 @@ Webflow.push(function () {
                         }).promise;
                     });
 
-                    pagePromises.push(pagePromise);
+                    promises.push(promise);
                 }
 
-                Promise.all(pagePromises).then(function () {
+                // Handle actions after all pages are rendered
+                Promise.all(promises).then(function () {
                     $("#DOWNLOAD-RESUME").closest("div[class*='wrapper']").css("display", "").children("div:not(a)").fadeOut("fast", function () {
                         $(this).css("opacity", "").fadeIn().css("opacity", "");
                     });
-
-                    $(pdfContainer).css({
-                        width: "",
-                        display: "",
-                        position: "",
-                        opacity: "",
-                        height: ""
-                    });
-
+                    $(pdfContainer).css({width: "", display: "", position: "", opacity: "", height: ""});
                     $("div.certifications").closest("[class*='wrapper']").fadeOut();
+
                     pdfLightbox.style.display = "flex";
                 }).catch(function () {
                     window.open("/RESUME.pdf", "_blank").focus();
@@ -109,9 +138,11 @@ Webflow.push(function () {
             }).catch(function () {
                 window.open("/RESUME.pdf", "_blank").focus();
             });
-
             pdfLightbox.style.display = "flex";
             $("div.certifications").closest("[class*='wrapper']").fadeOut();
         });
+
+        // Fetch and store the PDF in browser cache
+        $.get(cachedResumeURL);
     }
 });
