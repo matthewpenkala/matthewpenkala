@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   requestIdleCallback(()=>{
     detectPowerSavingMode().then((result) => {
       if (result == true) {
-        alert("LOW POWER!");
+        alert("LOW POWER MODE DETECTED!\n\nDon't worry about this popup; I just need to you to accept this for videos to autoplay\u2026")
       }
     });
   });
