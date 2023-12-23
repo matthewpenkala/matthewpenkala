@@ -18,6 +18,7 @@ jobs:
         with:
           base-url-path: https://src.matthewpenkala.com/
           drop-html-extension: true
+        id: sitemap
       - name: Beautify Sitemap
         uses: anyone-developer/anyone-validate-xml@0.9.2
         with:
@@ -27,6 +28,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add sitemap.xml
+          git add ${{ steps.sitemap.outputs.sitemap-path }}
           git commit -m "Update sitemap" || exit 0
           git push
