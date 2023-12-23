@@ -1,31 +1,32 @@
 name: Generate Sitemap
 
 on:
- push:
-  branches:
-    - main
+  push:
+    branches:
+      - main
 
 jobs:
- generate:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Generate Sitemap
-      uses: cicirello/generate-sitemap@v1.10.0
-      with:
-        base-url-path: https://src.matthewpenkala.com/
-    - name: Beautify Sitemap
-      id: beautify
-      uses: anyone-developer/anyone-validate-xml@0.9.2
-      with:
-        read-path: .
-        file-extension: xml
-    - name: Commit and push sitemap
-      run: |
-        echo "${{ steps.beautify.outputs.output }}" > sitemap.xml
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add sitemap.xml
-        git commit -m "Update sitemap" || exit 0
-        git push
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Generate Sitemap
+        uses: cicirello/generate-sitemap@v1.10.0
+        with:
+          base-url-path: https://src.matthewpenkala.com/
+          drop-html-extension: true
+      - name: Beautify Sitemap
+        uses: anyone-developer/anyone-validate-xml@0.9.2
+        with:
+          read-path: .
+          file-extension: xml
+      - name: Commit and push sitemap
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add sitemap.xml
+          git commit -m "Update sitemap" || exit 0
+          git push
