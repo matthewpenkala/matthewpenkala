@@ -1,10 +1,8 @@
 name: Generate Sitemap
-
 on:
   push:
     branches:
       - main
-
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -18,16 +16,21 @@ jobs:
         with:
           base-url-path: https://src.matthewpenkala.com/
           drop-html-extension: true
-        id: sitemap
+      - name: Create Temporary XML
+        run: |
+          echo "<root></root>" > temp.xml
       - name: Beautify Sitemap
         uses: anyone-developer/anyone-validate-xml@0.9.2
         with:
-          read-path: .
-          file-extension: '.xml'
+          read-path: temp.xml
+          file-extension: xml
       - name: Commit and push sitemap
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add ${{ steps.sitemap.outputs.sitemap-path }}
+          git add sitemap.xml
           git commit -m "Update sitemap" || exit 0
           git push
+      - name: Clean up
+        run: |
+          rm temp.xml
