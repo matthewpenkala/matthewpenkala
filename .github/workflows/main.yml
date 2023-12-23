@@ -1,8 +1,10 @@
 name: Generate Sitemap
+
 on:
   push:
     branches:
       - main
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -16,13 +18,10 @@ jobs:
         with:
           base-url-path: https://src.matthewpenkala.com/
           drop-html-extension: true
-      - name: Create Temporary XML
-        run: |
-          echo "<root></root>" > temp.xml
       - name: Beautify Sitemap
         uses: anyone-developer/anyone-validate-xml@0.9.2
         with:
-          read-path: temp.xml
+          read-path: .
           file-extension: xml
       - name: Commit and push sitemap
         run: |
@@ -31,6 +30,3 @@ jobs:
           git add sitemap.xml
           git commit -m "Update sitemap" || exit 0
           git push
-      - name: Clean up
-        run: |
-          rm temp.xml
