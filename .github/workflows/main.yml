@@ -2,27 +2,31 @@ name: Generate Sitemap
 
 on:
  push:
-   branches:
-     - main
+  branches:
+    - main
 
 jobs:
  generate:
-   runs-on: ubuntu-latest
-   steps:
-   - name: Checkout repository
-     uses: actions/checkout@v2
-   - name: Generate Sitemap
-     uses: cicirello/generate-sitemap@v1.10.0
-     with:
-       base-url-path: https://src.matthewpenkala.com/
-   - name: Beautify Sitemap
-     uses: ChristophWurst/xmllint-action@v1.2.1
-     with:
-       xml-file: sitemap.xml
-   - name: Commit and push sitemap
-     run: |
-       git config --local user.email "action@github.com"
-       git config --local user.name "GitHub Action"
-       git add sitemap.xml
-       git commit -m "Update sitemap" || exit 0
-       git push
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Generate Sitemap
+      uses: cicirello/generate-sitemap@v1.10.0
+      with:
+        base-url-path: https://src.matthewpenkala.com/
+
+    - name: Beautify Sitemap
+      uses: ChristophWurst/xmllint-action@v1.2.1
+      with:
+        xml-file: sitemap.xml
+        format: true
+
+    - name: Commit and push sitemap
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add sitemap.xml
+        git commit -m "Update sitemap" || exit 0
+        git push
