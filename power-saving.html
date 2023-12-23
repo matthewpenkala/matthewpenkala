@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let requestIdleCallback = window.requestIdleCallback || queueMicrotask;
   requestIdleCallback(()=>{
     detectPowerSavingMode().then((result) => {
-      console.log(result);
-      document.write(result);
-      console.log(result);
+      if (result == true) {
+        alert("LOW POWER!");
+      }
     });
   });
 });
