@@ -1,14 +1,24 @@
-name: Custom Build and Deploy
+name: Generate Sitemap
 
 on:
-  push:
-    branches:
-      - main
+ push:
+   branches:
+     - main
 
 jobs:
-  sitemap_and_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Sitemap Generator
-        uses: cgs-earth/sitemap-generator@0.2.0
-      # Add other steps for building and deploying your site here
+ generate:
+   runs-on: ubuntu-latest
+   steps:
+   - name: Checkout repository
+     uses: actions/checkout@v2
+   - name: Generate Sitemap
+     uses: cicirello/generate-sitemap@v1.10.0
+     with:
+       base-url-path: https://src.matthewpenkala.com/
+   - name: Commit and push sitemap
+     run: |
+       git config --local user.email "action@github.com"
+       git config --local user.name "GitHub Action"
+       git add sitemap.xml
+       git commit -m "Update sitemap" || exit 0
+       git push
