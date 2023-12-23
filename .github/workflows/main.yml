@@ -21,11 +21,9 @@ jobs:
       with:
         read-path: .
         file-extension: xml
-    - name: Overwrite Original File
-      run: |
-        echo "${{ steps.beautify.outputs.output }}" > sitemap.xml
     - name: Commit and push sitemap
       run: |
+        echo "${{ steps.beautify.outputs.output }}" > sitemap.xml
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add sitemap.xml
