@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Power Saving Mode detection</title>
+</head>
+<body>
+<div>Power Saving Mode? <code id="powerSavingMode"></code></div>
+<script type="module">
+import {detectPowerSavingMode} from './power-saving.js';
+document.addEventListener('DOMContentLoaded', () => {
+  let span = document.querySelector('#powerSavingMode');
+  span.textContent = '';
+  if(self !== top && window.safari){
+    alert('The detection may not work as expected in <iframe> for Safari');
+  }
+  let requestIdleCallback = window.requestIdleCallback || queueMicrotask;
+  requestIdleCallback(()=>{
+    detectPowerSavingMode().then((result) => {
+      span.textContent = '' + result;
+    });
+  });
+});
+</script>
+</body>
+</html>
