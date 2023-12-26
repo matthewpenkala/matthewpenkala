@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated with https://github.com/google/shaka-packager version v2.6.1-634af65-release-->
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011" minBufferTime="PT2S" type="static" mediaPresentationDuration="PT36.400001525878906S">
+  <Period id="0">
+    <AdaptationSet id="0" contentType="video" maxWidth="960" maxHeight="540" frameRate="25000/1000" par="16:9">
+      <Representation id="0" bandwidth="233443" codecs="hvc1.1.6.L93.B0" mimeType="video/mp4" sar="1:1" width="480" height="270">
+        <BaseURL>DASH_480p.mp4</BaseURL>
+        <SegmentBase indexRange="948-1063" timescale="25000">
+          <Initialization range="0-947"/>
+        </SegmentBase>
+      </Representation>
+      <Representation id="1" bandwidth="461646" codecs="hvc1.1.6.L93.B0" mimeType="video/mp4" sar="1:1" width="640" height="360">
+        <BaseURL>DASH_640p.mp4</BaseURL>
+        <SegmentBase indexRange="948-1075" timescale="25000">
+          <Initialization range="0-947"/>
+        </SegmentBase>
+      </Representation>
+      <Representation id="2" bandwidth="759832" codecs="hvc1.1.6.L93.B0" mimeType="video/mp4" sar="1:1" width="960" height="540">
+        <BaseURL>DASH_960p.mp4</BaseURL>
+        <SegmentBase indexRange="949-1064" timescale="25000">
+          <Initialization range="0-948"/>
+        </SegmentBase>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
