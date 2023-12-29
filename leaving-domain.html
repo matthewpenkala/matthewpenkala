@@ -15,22 +15,24 @@
 </head>
 
 <body style='font-size:14px;line-height:1.28571em;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background-color:#090909!important;color:#fff;'>
-    <script>
+    <script type="text/javascript">
         window.goBack = function (e) {
-            var defaultLocation = 'https://matthewpenkala.com/';
+            const defaultLocation = 'https://matthewpenkala.com/';
             var oldHash = window.location.hash;
             history.back();
             var newHash = window.location.hash;
-            if (newHash === oldHash && (typeof document.referrer !== 'string' || document.referrer === '')) {
-                window.setTimeout(function () {
+            if (newHash === oldHash && (!document.referrer || document.referrer === '')) {
+                setTimeout(() => {
                     window.location.href = defaultLocation;
                 }, 1000);
             }
             if (e) {
-                if (e.preventDefault)
+                if (typeof e.preventDefault === 'function') {
                     e.preventDefault();
-                if (e.preventPropagation)
-                    e.preventPropagation();
+                }
+                if (typeof e.stopPropagation === 'function') {
+                    e.stopPropagation();
+                }
             }
             return false;
         };
