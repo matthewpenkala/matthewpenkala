@@ -5,35 +5,46 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Redirecting...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        if (window.opener) {
-            window.opener = null;
-        }
-    </script>
+    <script type="text/javascript" src="data:text/javascript;base64,d2luZG93Lm9wZW5lciYmKHdpbmRvdy5vcGVuZXI9bnVsbCk7"></script>
     <link rel="shortcut icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAASFBMVEUAAAAAAABVVVUYGBgAAADg4OH3+PgnJycAAAAAAACKiopUVFRzc3Pw8PA/Pj4AAADh4eFra2uCg4MAAACUlJQAAAAAAAD///8dxH1oAAAAF3RSTlOXALafkvb9pHJUz7bF+61j9sDLeNQ1MfSoh/wAAADGSURBVDjLxdPdDoMgDAXgDlAQFfzZ1vd/01UcSoCa7cqTmJCcL0QCBQWURzVUhNpqDmi7mQFnDsw4EBAoONBjfwlCtQOKKn8wAc7mQMnFJWBEnQONYwIalMUO2PwLvFnNXq7G+BLAluQEJUCMJ1G0roA2BS2B6RIwO3hD8TyI4QGG7z6AKcAKkPoEWlaAUuoAtKxd9yuCd7juKQFTAF0EXfkefgXCAliRAZqOA+yJIFSwzRf3qgeqIEyoW2QOwDqAJ5wpwDcfiDMWN7/3ZaIAAAAASUVORK5CYII=">
-    <!-- <script type="text/javascript">
-        setTimeout(function () {
-            location.replace("https://external-url.com/");
-        }, 1000);
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var countdownElement = document.getElementById('time-remaining');
+            var countdownStart = 5;
+
+            function updateCountdownText(seconds) {
+                countdownElement.textContent = seconds + (seconds === 1 ? ' second' : ' seconds');
+            }
+            updateCountdownText(countdownStart);
+
+            function countdown() {
+                if (countdownStart > 0) {
+                    updateCountdownText(countdownStart);
+                    countdownStart--;
+                    setTimeout(countdown, 1000);
+                } else {
+                    location.replace('https://external-url.com/');
+                }
+            }
+            setTimeout(countdown, 5000);
+        });
     </script>
     <noscript>
         <meta http-equiv="refresh" content="1; url=https://external-url.com/">
-    </noscript> -->
+    </noscript>
     <meta name="robots" content="noindex">
     <meta name="referrer" content="origin">
-    <!-- <link rel="stylesheet" type="text/css" media="all" href="https://s3-media0.fl.yelpcdn.com/assets/2/www/css/36d5dafb39aa/redirect.css"> -->
-
 </head>
 
-<body style="font-size: 14px;line-height: 1.28571em;font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;color: #333;background-color: #fff;">
+<body style="font-size: 14px;line-height: 1.28571em;font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;background-color: #090909; color: white;">
     <script>
-        window.goBack = function (e) {
+        window.goBack = function(e) {
             var defaultLocation = 'https://matthewpenkala.com/';
             var oldHash = window.location.hash;
             history.back();
             var newHash = window.location.hash;
             if (newHash === oldHash && (typeof document.referrer !== 'string' || document.referrer === '')) {
-                window.setTimeout(function () {
+                window.setTimeout(function() {
                     window.location.href = defaultLocation;
                 }, 1000);
             }
@@ -46,16 +57,18 @@
             return false;
         };
     </script>
-    <div class="y-container y-container--width-6" style="background-color: #fff;min-width: 1020px;">
+    <div class="y-container y-container--width-6" style="background-color: #090909;min-width: 1020px;">
         <div class="y-container_content" style="max-width: 465px;margin: 0 auto;padding: 0 15px;">
             <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUAAAAAAAD///+D3c/SAAAAAXRSTlMAQObYZgAAAFdJREFUSMft1UEKACAIRFEv2SW6mbdsGJAwXGuRHxfB24ibZCA5GyhPpgYy9TdB/jQXCcav3OIF2dFKhGOLtUTCSoXT8pogexSJ7EdLJCxNCn4Z5oSlyQIEWxd9P81Y6wAAAABJRU5ErkJggg==" style="margin: 30px 0 0;">
-            <h1 style="font-weight: 700;margin-bottom: 6px;font-size: 30px;line-height: 1.2em;color: #333;padding-top: 6px;word-wrap: break-word!important;word-break: break-word!important;overflow-wrap: break-word!important;">I'll see you... later! 👋</h1>
+            <h1 style="font-weight: 700;margin-bottom: 6px;font-size: 30px;line-height: 1.2em;color: white;padding-top: 6px;word-wrap: break-word!important;word-break: break-word!important;overflow-wrap: break-word!important;">I'll see you... later! 👋</h1>
             <p style="margin-bottom: 12px;font-size: 16px;padding: 8px 0;">
-                You are leaving <code onclick="javascript:(function(){window.location.replace('https://matthewpenkala.com');})()">matthewpenkala.com</code> and will be automatically redirected to <a href="https://external-url.com/" rel="nofollow" style="color: #0073bb;text-decoration: none;"> https://external-url.com/ </a> in a moment.
+                You are leaving <code onclick="javascript:(function(){window.location.replace('https://matthewpenkala.com');})()" style="background-color:rgb(127 127 127/75%);padding:0 5px 1px;line-height:150%!important;border-radius:2.5px;">matthewpenkala.com</code> and will be automatically redirected to <a href="https://external-url.com/" rel="nofollow" style="color: #009dff;text-decoration: none;"> https://external-url.com/ </a> in <span id="time-remaining">a moment</span>.
             </p>
-            <p style="margin-bottom: 12px;font-size: 16px;padding: 8px 0;">
-                Changed your mind? <a class="goback" onclick="goBack();" href="#" style="color: #0073bb;text-decoration: none;"> Go back, please.</a>
-            </p>
+            <i>
+                <p style="margin-bottom: 12px;font-size: 16px;padding: 8px 0;">
+                    Changed your mind? <a class="goback" onclick="goBack();" href="#" style="color: #009dff;text-decoration: none;"> Go back, please.</a>
+                </p>
+            </i>
         </div>
     </div>
 </body>
