@@ -53,11 +53,13 @@
         (function () {
             var countdownElement = document.getElementById('time-remaining');
             var countdownStart = 5;
+
             function updateCountdownText(seconds) {
                 countdownElement.textContent = seconds <= 1 ? '1 second' : seconds + ' seconds';
             }
+
             function countdown() {
-                if (countdownStart >= 0) {
+                if (countdownStart > 0) {
                     updateCountdownText(countdownStart);
                     countdownStart--;
                     setTimeout(countdown, 1000);
