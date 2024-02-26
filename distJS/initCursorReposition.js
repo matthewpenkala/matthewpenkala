@@ -56,7 +56,7 @@
   document.addEventListener('DOMContentLoaded', fadeInCursorWrapper);
   document.addEventListener('mousemove', throttle((e) => {
     requestAnimationFrame(() => saveCursorPosition(e.clientX, e.clientY));
-  }, 200));
+  }, 400));
 
   // Cleanup function to remove initial cursor state style after interaction
   const removeElementAndCleanup = () => {
