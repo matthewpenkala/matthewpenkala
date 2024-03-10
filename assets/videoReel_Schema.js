@@ -7,8 +7,8 @@ var structuredData = {
             'description': "Explore the dynamic world of motion graphics and visual effects through Matthew Penkala's supereminent reel. Discover stunning visuals and seamless animations that showcase his expertise in this evolving realm. Dive into a creative journey that combines artistic vision with technical finesse, all curated in one unparalleled video reel. Experience the éclat of motion design at its finest with Matthew Penkala.",
             'thumbnailUrl': 'https://cache.matthewpenkala.com/assets/MTP-SV_REEL.jpg',
             'contentUrl': 'https://penka.la/video-reel',
-            'uploadDate': '2023-12-07',
-            'duration': 'PT0H2M14S'
+            'uploadDate': '2024-03-10',
+            'duration': 'PT0H2M12S'
         }
     },
     init: function () {
