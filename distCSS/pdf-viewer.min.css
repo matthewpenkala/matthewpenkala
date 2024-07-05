@@ -16,8 +16,9 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(10px);
 }
+
 #pdf-container {
     image-rendering: -webkit-optimize-contrast;
     shape-rendering: geometricPrecision;
@@ -29,33 +30,36 @@
     position: absolute;
     white-space: pre;
     cursor: text;
-    transform-origin: 0 0
+    transform-origin: 0 0;
 }
+
 div>canvas {
     pointer-events: none;
     buffered-rendering: static;
     user-drag: none;
     user-select: none;
-    transform-origin: center
+    transform-origin: center;
 }
+
 #DOWNLOAD-RESUME span {
     display: inline-block;
-    text-decoration: none
+    text-decoration: none;
 }
-/*
+
 #pdf-lb-close,.w-lightbox-close {
-    filter: drop-shadow(0 0 10px rgb(0 0 0/1))url(#svg-shadow)
+    filter: drop-shadow(0 0 10px rgb(0 0 0/.75)) drop-shadow(0 0 5px rgb(0 0 0/.25)) drop-shadow(0 0 25px rgb(0 0 0/.75));
+    transform-origin: center !important;
 }
 #pdf-lb-close:hover {
-    filter: drop-shadow(0 0 5px rgb(0 0 0/.5))url(#svg-shadow)drop-shadow(0 0 7.5px rgb(0 0 0/.25))
+    filter: drop-shadow(0 0 10px rgb(0 0 0/.75)) drop-shadow(0 0 5px rgb(0 0 0/.5)) drop-shadow(0 0 10px rgb(0 0 0/.25));
 }
-*/
+
 @media (min-width:768px) {
     #pdf-container {
-        background-image: url(https://cdn.prod.website-files.com/63cff33fb0ac65f3df302ea2/653c0d505f5c3a47cf01b8eb_loading-please-wait.svg),url(https://cdn.prod.website-files.com/63cff33fb0ac65f3df302ea2/6506737fe673b3bb0ac7e81c_MTP_LOGO_ANIMATION.gif),linear-gradient(rgba(191,191,191,.25),rgba(191,191,191,.25));
+        background-image: url(https://assets-global.website-files.com/63cff33fb0ac65f3df302ea2/653c0d505f5c3a47cf01b8eb_loading-please-wait.svg),url(https://assets-global.website-files.com/63cff33fb0ac65f3df302ea2/6506737fe673b3bb0ac7e81c_MTP_LOGO_ANIMATION.gif),linear-gradient(rgba(191,191,191,.25),rgba(191,191,191,.25));
         background-position: 50% 50%,50% 50%,0 0;
         background-size: auto,200px,auto;
         background-repeat: no-repeat,no-repeat,repeat;
-        background-attachment: fixed,fixed,scroll
+        background-attachment: fixed,fixed,scroll;
     }
 }
