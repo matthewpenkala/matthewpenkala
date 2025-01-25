@@ -8,371 +8,199 @@
  * This code is released under the MIT license.
  */
 
-"use strict";
+const fitty = (function (w) {
+  if (!w) return;
 
-/**
- * Polyfill for `_extends`, used by original Fitty code.
- * In modern browsers, this is just `Object.assign(...)`.
- */
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-  return target;
-};
+  const toArray = (nl) => [].slice.call(nl);
 
-/**
- * The core Fitty logic, originally wrapped in UMD. We’ve extracted
- * it into a single function (fittyModule) that accepts a `window`
- * object (or `null`) and returns the Fitty API.
- */
-function fittyModule(n) {
-  // If `n` is null/undefined, we can’t do anything.
-  // Return a no-op function so we don’t break.
-  if (!n) {
-    return function () {
-      console.warn("Fitty: window is not defined");
-    };
-  }
-
-  // The "states" that track whether an element’s layout or content is dirty.
-  var r = {
+  const DrawState = {
     IDLE: 0,
     DIRTY_CONTENT: 1,
     DIRTY_LAYOUT: 2,
     DIRTY: 3
   };
 
-  // Internal references
-  var i = []; // holds all fitty elements
-  var e = null; // requestAnimationFrame id
+  let fitties = [];
 
-  // Throttled resize loop using `requestAnimationFrame` if available
-  var o =
-    "requestAnimationFrame" in n
-      ? function () {
-          n.cancelAnimationFrame(e);
-          e = n.requestAnimationFrame(function () {
-            u(i.filter(function (el) {
-              return el.dirty;
-            }));
-          });
-        }
-      : function () {
-          // If RAF not available, no-op (or you could do setTimeout).
-        };
-
-  /**
-   * Mark all items as `t` (some dirty state), then schedule a re-check.
-   */
-  var t = function (dirtyState) {
-    return function () {
-      i.forEach(function (item) {
-        item.dirty = dirtyState;
-      });
-      o();
-    };
-  };
-
-  /**
-   * The main update loop that:
-   * 1) Applies any needed initial styles (like inline-block)
-   * 2) Calculates the new font sizes
-   * 3) Applies them to each element
-   */
-  var u = function (list) {
-    // 1) For items that haven't computed style, do so now
-    list
-      .filter(function (item) {
-        return !item.styleComputed;
-      })
-      .forEach(function (item) {
-        item.styleComputed = s(item);
-      });
-
-    // 2) For items needing inline-block or white-space tweaks
-    list.filter(f).forEach(d);
-
-    // 3) For items needing new measurements
-    var changed = list.filter(c);
-    changed.forEach(l);
-    changed.forEach(function (item) {
-      d(item);
-      a(item);
+  let redrawFrame = null;
+  const requestRedraw = 'requestAnimationFrame' in w ? () => {
+    w.cancelAnimationFrame(redrawFrame);
+    redrawFrame = w.requestAnimationFrame(() => {
+      redraw(fitties.filter(f => f.dirty));
     });
-    changed.forEach(p);
+  } : () => {};
+
+  const redrawAll = (type) => () => {
+    fitties.forEach(f => {
+      f.dirty = type;
+    });
+    requestRedraw();
   };
 
-  /**
-   * Reset an element's `dirty` state to IDLE
-   */
-  var a = function (item) {
-    return (item.dirty = r.IDLE);
+  const redraw = (fitties) => {
+    fitties.filter(f => !f.styleComputed).forEach(f => {
+      f.styleComputed = computeStyle(f);
+    });
+
+    fitties.filter(shouldPreStyle).forEach(applyStyle);
+
+    const fittiesToRedraw = fitties.filter(shouldRedraw);
+
+    fittiesToRedraw.forEach(calculateStyles);
+
+    fittiesToRedraw.forEach(f => {
+      applyStyle(f);
+      markAsClean(f);
+    });
+
+    fittiesToRedraw.forEach(dispatchFitEvent);
   };
 
-  /**
-   * Calculate the new font size based on parent container width
-   */
-  var l = function (item) {
-    item.availableWidth = item.element.parentNode.clientWidth;
-    item.currentWidth = item.element.scrollWidth;
-    item.previousFontSize = item.currentFontSize;
+  const markAsClean = (f) => f.dirty = DrawState.IDLE;
 
-    // scale
-    item.currentFontSize = Math.min(
-      Math.max(
-        item.minSize,
-        (item.availableWidth / item.currentWidth) * item.previousFontSize
-      ),
-      item.maxSize
-    );
-
-    // If multiLine is true but we got clamped at minSize, allow wrapping
-    item.whiteSpace =
-      item.multiLine && item.currentFontSize === item.minSize
-        ? "normal"
-        : "nowrap";
+  const calculateStyles = (f) => {
+    f.availableWidth = f.element.parentNode.clientWidth;
+    f.currentWidth = f.element.scrollWidth;
+    f.previousFontSize = f.currentFontSize;
+    f.currentFontSize = Math.min(Math.max(f.minSize, f.availableWidth / f.currentWidth * f.previousFontSize), f.maxSize);
+    f.whiteSpace = f.multiLine && f.currentFontSize === f.minSize ? 'normal' : 'nowrap';
   };
 
-  /**
-   * Return true if this element needs re-measuring
-   */
-  var c = function (item) {
-    // DIRTY_LAYOUT means we know the parent's width changed
-    if (item.dirty !== r.DIRTY_LAYOUT) return item.dirty === r.DIRTY;
-    return (
-      item.dirty === r.DIRTY_LAYOUT &&
-      item.element.parentNode.clientWidth !== item.availableWidth
-    );
+  const shouldRedraw = (f) => f.dirty !== DrawState.DIRTY_LAYOUT || (f.dirty === DrawState.DIRTY_LAYOUT && f.element.parentNode.clientWidth !== f.availableWidth);
+
+  const computeStyle = (f) => {
+    const style = w.getComputedStyle(f.element, null);
+    f.currentFontSize = parseInt(style.getPropertyValue('font-size'), 10);
+    f.display = style.getPropertyValue('display');
+    f.whiteSpace = style.getPropertyValue('white-space');
   };
 
-  /**
-   * Compute and store the element's current inline styles
-   */
-  var s = function (item) {
-    var style = n.getComputedStyle(item.element, null);
-    item.currentFontSize = parseInt(style.getPropertyValue("font-size"), 10);
-    item.display = style.getPropertyValue("display");
-    item.whiteSpace = style.getPropertyValue("white-space");
-  };
+  const shouldPreStyle = (f) => {
+    if (f.preStyleTestCompleted) return false;
 
-  /**
-   * For new elements, or those that need an inline-block / nowrap fix
-   */
-  var f = function (item) {
-    var changedSomething = false;
-    if (!item.preStyleTestCompleted) {
-      if (/inline-/.test(item.display)) {
-        changedSomething = true;
-        item.display = "inline-block";
-      }
-      if ("nowrap" !== item.whiteSpace) {
-        changedSomething = true;
-        item.whiteSpace = "nowrap";
-      }
-      item.preStyleTestCompleted = true;
+    let preStyle = false;
+
+    if (!/inline-/.test(f.display)) {
+      preStyle = true;
+      f.display = 'inline-block';
     }
-    return changedSomething;
-  };
 
-  /**
-   * Apply the updated inline styles to the element
-   */
-  var d = function (item) {
-    if (!item.originalStyle) {
-      item.originalStyle = item.element.getAttribute("style") || "";
+    if (f.whiteSpace !== 'nowrap') {
+      preStyle = true;
+      f.whiteSpace = 'nowrap';
     }
-    item.element.style.cssText =
-      item.originalStyle +
-      ";white-space:" +
-      item.whiteSpace +
-      ";display:" +
-      item.display +
-      ";font-size:" +
-      item.currentFontSize +
-      "px";
+
+    f.preStyleTestCompleted = true;
+
+    return preStyle;
   };
 
-  /**
-   * Dispatch a custom "fit" event on the element after changing its size
-   */
-  var p = function (item) {
-    item.element.dispatchEvent(
-      new CustomEvent("fit", {
-        detail: {
-          oldValue: item.previousFontSize,
-          newValue: item.currentFontSize,
-          scaleFactor: item.currentFontSize / item.previousFontSize
-        }
-      })
-    );
+  const applyStyle = (f) => {
+    if (!f.originalStyle) {
+      f.originalStyle = f.element.getAttribute('style') || '';
+    }
+
+    f.element.style.cssText = f.originalStyle + ';white-space:' + f.whiteSpace + ';display:' + f.display + ';font-size:' + f.currentFontSize + 'px';
   };
 
-  /**
-   * Mark one element as dirty of a certain type (content vs layout),
-   * then schedule the main loop.
-   */
-  var m = function (item, dirtyType) {
-    return function () {
-      item.dirty = dirtyType;
-      o();
-    };
-  };
-
-  /**
-   * Add a brand new fitty element to the internal array
-   */
-  var v = function (item) {
-    item.newbie = true;
-    item.dirty = true;
-    i.push(item);
-  };
-
-  /**
-   * Unsubscribe function used by each fitty element if needed
-   */
-  var y = function (item) {
-    return function () {
-      i = i.filter(function (el) {
-        return el.element !== item.element;
-      });
-      if (item.observeMutations) {
-        item.observer.disconnect();
+  const dispatchFitEvent = (f) => {
+    f.element.dispatchEvent(new CustomEvent('fit', {
+      detail: {
+        oldValue: f.previousFontSize,
+        newValue: f.currentFontSize,
+        scaleFactor: f.currentFontSize / f.previousFontSize
       }
-      item.element.style.cssText = item.originalStyle;
-    };
+    }));
   };
 
-  /**
-   * Observe DOM mutations if config.observeMutations is set
-   */
-  var h = function (item) {
-    if (item.observeMutations) {
-      item.observer = new MutationObserver(m(item, r.DIRTY_CONTENT));
-      item.observer.observe(item.element, item.observeMutations);
+  const fit = (f, type) => () => {
+    f.dirty = type;
+    requestRedraw();
+  };
+
+  const subscribe = (f) => {
+    f.newbie = true;
+    f.dirty = true;
+    fitties.push(f);
+  };
+
+  const unsubscribe = (f) => () => {
+    fitties = fitties.filter(_ => _.element !== f.element);
+    if (f.observeMutations) {
+      f.observer.disconnect();
     }
+    f.element.style.cssText = f.originalStyle;
   };
 
-  // Default config for each fitty element
-  var S = {
+  const observeMutations = (f) => {
+    if (!f.observeMutations) return;
+
+    f.observer = new MutationObserver(fit(f, DrawState.DIRTY_CONTENT));
+    f.observer.observe(f.element, f.observeMutations);
+  };
+
+  const mutationObserverDefaultSetting = {
+    subtree: true,
+    childList: true,
+    characterData: true
+  };
+
+  const defaultOptions = {
     minSize: 16,
     maxSize: 512,
     multiLine: true,
-    observeMutations:
-      "MutationObserver" in n && {
-        subtree: true,
-        childList: true,
-        characterData: true
-      }
+    observeMutations: 'MutationObserver' in w ? mutationObserverDefaultSetting : false
   };
 
-  // For window-resize event throttling
-  var b = null;
-  var w = function () {
-    n.clearTimeout(b);
-    b = n.setTimeout(t(r.DIRTY_LAYOUT), F.observeWindowDelay);
-  };
+  function fittyCreate(elements, options) {
+    const fittyOptions = Object.assign({}, defaultOptions, options);
 
-  // The events we'll watch on the window
-  var T = ["resize", "orientationchange"];
+    const publicFitties = elements.map(element => {
+      const f = Object.assign({}, fittyOptions, { element });
 
-  /**
-   * Combine an array of DOM elements with user config, create
-   * the internal objects, and trigger the first fit pass.
-   */
-  function z(elements, options) {
-    var config = _extends({}, S, options);
+      subscribe(f);
+      observeMutations(f);
 
-    // Convert each DOM element into an object with config and watchers
-    var items = elements.map(function (element) {
-      var itemConfig = _extends({}, config, { element: element });
-      v(itemConfig);
-      h(itemConfig);
       return {
-        element: element,
-        fit: m(itemConfig, r.DIRTY),
-        unsubscribe: y(itemConfig)
+        element,
+        fit: fit(f, DrawState.DIRTY),
+        unsubscribe: unsubscribe(f)
       };
     });
 
-    // Kick off measuring once
-    o();
-    return items;
+    requestRedraw();
+
+    return publicFitties;
   }
 
-  /**
-   * The top-level function that the user actually calls:
-   *   fitty('.some-selector', { maxSize: 200, multiLine: false, ... })
-   * or
-   *   fitty(someDOMElement, { ... })
-   *
-   * Returns an array (if multiple elements matched) or a single object.
-   */
-  function F(e) {
-    var t;
-    var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    if (typeof e === "string") {
-      // e is a selector
-      var nodeList = document.querySelectorAll(e);
-      t = [].slice.call(nodeList);
-      return z(t, n);
-    } else {
-      // e is already a DOM element
-      return z([e], n)[0];
-    }
+  function fittyMain(target, options = {}) {
+    return typeof target === 'string'
+      ? fittyCreate(toArray(document.querySelectorAll(target)), options)
+      : fittyCreate([target], options)[0];
   }
 
-  /**
-   * Additional static properties on F
-   */
-  // Let us toggle window observation on/off
-  Object.defineProperty(F, "observeWindow", {
-    set: function (shouldObserve) {
-      var action = (shouldObserve ? "add" : "remove") + "EventListener";
-      T.forEach(function (evt) {
-        n[action](evt, w);
+  let resizeDebounce = null;
+  const onWindowResized = () => {
+    w.clearTimeout(resizeDebounce);
+    resizeDebounce = w.setTimeout(redrawAll(DrawState.DIRTY_LAYOUT), fittyMain.observeWindowDelay);
+  };
+
+  const events = ['resize', 'orientationchange'];
+  Object.defineProperty(fittyMain, 'observeWindow', {
+    set: (enabled) => {
+      const method = `${enabled ? 'add' : 'remove'}EventListener`;
+      events.forEach(e => {
+        w[method](e, onWindowResized);
       });
     }
   });
 
-  // By default, Fitty listens to window resizes
-  F.observeWindow = true;
+  fittyMain.observeWindow = true;
+  fittyMain.observeWindowDelay = 100;
 
-  // How long after a resize do we wait before re-measuring
-  F.observeWindowDelay = 100;
+  fittyMain.fitAll = redrawAll(DrawState.DIRTY);
 
-  // This triggers a re-fit for *all* known elements
-  F.fitAll = t(r.DIRTY);
+  return fittyMain;
+})(typeof window === 'undefined' ? null : window);
 
-  // Finally, return the main function so the user can call it
-  return F;
-}
-
-/**
- * Actually instantiate the module by passing in the browser's window object
- * (if available). If `window` doesn’t exist, we pass null and return a no-op.
- */
-const fitty = fittyModule(typeof window !== "undefined" ? window : null);
-
-/**
- * Export the final fitty() function as the default export.
- * 
- * Example usage in your HTML/JS:
- * 
- *   // Dynamic import:
- *   (async () => {
- *     const { default: fitty } = await import('./fitty.esm.js');
- *     fitty('.fix-stroke');
- *   })();
- * 
- *   // or static import in a <script type="module">:
- *   import fitty from './fitty.esm.js';
- *   fitty('.fix-stroke');
- */
 export default fitty;
