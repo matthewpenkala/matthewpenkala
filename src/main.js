@@ -1,10 +1,9 @@
 // src/main.js
-// import './styles/base.css';
 import './styles/textGlitch.css';
 
-// main.js – the single entry file Vite starts with
 import { initGlitch, switchToPlay } from './textGlitch.js';
+import { elevateFetchPriority }     from './priorityFetch.js';
 
 initGlitch();
-
-window.switchToPlay = switchToPlay;
+window.switchToPlay        = switchToPlay;        // Webflow interactions
+window.elevateFetchPriority = elevateFetchPriority;
