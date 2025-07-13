@@ -24,6 +24,7 @@
     "postcss-cli": "^11.0.1",
     "postcss-preset-env": "^10.2.4",
     "rollup-plugin-terser": "^7.0.2",
+    "terser": "^5.43.1",
     "vite": "^7.0.4",
     "vite-plugin-static-copy": "^3.1.0"
   }
