@@ -1,46 +1,42 @@
 // vite.config.js
-import { defineConfig }    from 'vite';
-import { viteStaticCopy }  from 'vite-plugin-static-copy';
-import { terser }          from 'rollup-plugin-terser';
+import { defineConfig }     from 'vite';
+import { viteStaticCopy }   from 'vite-plugin-static-copy';
+import { terser }           from 'rollup-plugin-terser';
 
 export default defineConfig({
-  base: '/',
+  base: '/',                    // custom domain → site root
   build: {
     outDir: 'dist',
-    assetsDir: '.',          // main.js & main.css at dist root
-    cssCodeSplit: false,
+    assetsDir: '.',             // put all build files at dist/ root
+    cssCodeSplit: false,        // bundle imported CSS into ONE file
     rollupOptions: {
       input: 'src/main.js',
       output: {
+        // fixed filenames for easy linking
         entryFileNames: 'main.js',
         chunkFileNames: 'chunk-[hash].js',
-        assetFileNames: (info) =>
+        assetFileNames: info =>
           info.name?.endsWith('.css') ? 'main.css' : '[name][extname]',
-        // Minify ONLY the standalone JS files copied from public/
-        plugins: [
-          terser({
-            include: ['../public/**/*.js'],
-            format: { comments: false }
-          })
-        ]
-      }
+      },
+      // extra JS minification pass (applies to main & public/*.js)
+      plugins: [terser({ format: { comments: false } })]
     }
   },
   plugins: [
-    // Copy everything in public/ to dist/ and minify CSS on the fly
+    // copy everything in public/ → dist/ and minify public CSS
     viteStaticCopy({
       targets: [
         {
           src: 'public/**/*',
-          dest: '.',                 // keep same relative paths
+          dest: '.',                   // preserve folder structure
           transform: async (code, filepath) => {
             if (filepath.endsWith('.css')) {
               const postcss = (await import('postcss')).default;
               const cssnano = (await import('cssnano')).default;
-              const result = await postcss([cssnano()]).process(code, { from: undefined });
-              return result.css;      // ← minified CSS
+              const result  = await postcss([cssnano()]).process(code, { from: undefined });
+              return result.css;        // return minified CSS
             }
-            return code;              // JS already minified by terser above
+            return code;                // JS already minified by terser
           }
         }
       ]
