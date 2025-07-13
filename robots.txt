@@ -9,6 +9,7 @@ Allow: /*.svg$
 Allow: https://src.matthewpenkala.com/assets/videoReel_Schema.json
 Allow: /README.md
 
+Disallow: /_archived/*
 Disallow: /*.html$
 Disallow: /*.pdf$
 Disallow: /*.js$
