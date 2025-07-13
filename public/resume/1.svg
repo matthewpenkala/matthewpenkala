@@ -1,0 +1,241 @@
+<svg x="0" y="0" width="935" height="1210" viewBox="0 0 935 1210" version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+<clipPath id="c_1"><path d="M0,0H935V1210H0Z"/></clipPath>
+<clipPath id="c0_1"><path d="M157.1 143.4V123.7H356.5v19.7Z"/></clipPath>
+<clipPath id="c1_1"><path d="M381.5 143.4V123.7H516.8v19.7Z"/></clipPath>
+<clipPath id="c2_1"><path d="M536.7 143.4V123.7H667.5v19.7Z"/></clipPath>
+<clipPath id="c3_1"><path d="M688.3 143.4V123.7h89v19.7Z"/></clipPath>
+<clipPath id="c4_1"><path d="M65.7 338.9V265.3H296.6v73.6Z"/></clipPath>
+<clipPath id="c5_1"><path d="M295.9 338.9V265.3H591.3v73.6Z"/></clipPath>
+<clipPath id="c6_1"><path d="M590.7 338.9V265.3h249v73.6Z"/></clipPath>
+<clipPath id="c7_1"><path d="M65.7 477.3V403.7H229.8v73.6Z"/></clipPath>
+<clipPath id="c8_1"><path d="M229.1 477.3V403.7H374v73.6Z"/></clipPath>
+<clipPath id="c9_1"><path d="M373.4 477.3V403.7H600.8v73.6Z"/></clipPath>
+<clipPath id="ca_1"><path d="M600.2 477.3V403.7H819.3v73.6Z"/></clipPath>
+
+<style>
+text { white-space: pre; }
+path, image { pointer-events: none; }
+
+.s0_1{font-size:15.31px;font-family:SourceSansPro-SemiBold_77;fill:#000;}
+.s1_1{font-size:15.31px;font-family:SourceSansPro-Regular_6-;fill:#333;}
+.s2_1{font-size:45.83px;font-family:BodoniURW-Med_75;fill:#000;}
+.s3_1{font-size:15.31px;font-family:SourceSansPro-Italic_70;fill:#000;}
+.s4_1{font-size:22.92px;font-family:SourceSansPro-Bold_72;fill:#333;}
+.s5_1{font-size:11.46px;font-family:SymbolMT_6z;fill:#333;}
+.s6_1{font-size:14.48px;font-family:SourceSansPro-Regular_6-;fill:#000;}
+.s7_1{font-size:11.46px;font-family:SourceSansPro-Regular_6-;fill:#000;}
+.s8_1{font-size:14.48px;font-family:SourceSansPro-Bold_72;fill:#000;}
+.s9_1{font-size:13.75px;font-family:SourceSansPro-Italic_70;fill:#000;}
+.sa_1{font-size:11.46px;font-family:SourceSansPro-Italic_70;fill:#000;}
+
+.g0_1{fill:none;stroke:#7D7D7D;stroke-width:1.527;stroke-miterlimit:8;}
+.g1_1{fill:#313131;}
+.g2_1{fill:#7C7C7C;}
+.g3_1{fill:none;stroke:#333;stroke-width:2.673;stroke-miterlimit:8;}
+
+</style>
+
+</defs>
+<path d="M0 0V1210H935V0Z" fill="#FFFFFF" stroke="none"/>
+<g clip-path="url(#c_1)">
+<text clip-path="url(#c0_1)" x="161.3" y="139.2" dx="0 .6 .6 .5 .7 .6 .5 .6 .7 .6 .5 .6 .7 .6 .5 .6 .6 .6 .6 .5 .7 .5 .7 .5" class="s0_1">Alburquerque, New Mexico </text>
+<path d="M677.3 141.5V127.4M525.7 141.5V127.4M370.5 141.5V127.4" class="g0_1"/>
+<g clip-path="url(#c1_1)">
+<text x="391.1" y="139.2" dx="0 .9" class="s1_1">m: </text>
+<text x="413.4" y="139.2" dx="0 .8 .8 .8 .7 .8 .8 .8 .7 .8 .8 .8 .7" class="s0_1">916 292 1643 </text>
+</g>
+<text clip-path="url(#c2_1)" x="546" y="139.2" dx="0 .8 .7 .7 .7 .8 .7 .8 .8 .7 .8 .7 .7 .8" class="s0_1">matt@penka.la </text>
+<text clip-path="url(#c3_1)" x="695.6" y="139.2" dx="0 .9 .9 .8 .9 .9 .9" class="s0_1">Website </text>
+<image preserveAspectRatio="none" x="759" y="128" width="11" height="11" href="1/img/1.png"/>
+<path d="M695.6 141.1h58.9v-.8H695.6v.8Z" class="g1_1"/>
+<text x="300.7" y="108" dx="0 .7 .8 .7 .8 .7 .7 .8 .8 .8 .7 .8 .8 .8 .7 .8" class="s2_1">Matthew Penkala </text>
+<text x="241.6" y="172.2" dx="0 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .8 .9 1 .9 .9 .9 .8 .9 .8 1 .9" class="s0_1">Senior Motion Designer </text>
+<path d="M422.3 176.1h1.3V160.8h-1.3v15.3Z" class="g2_1"/>
+<text x="432" y="172.2" dx="0 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .8 .9 .9" class="s0_1">Associate Creative Director, Motion </text>
+<text x="328.6" y="191.5" dx="0 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .8 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .9 .8 .9 .9 .9 .9 .8 .9 .9 .9 .9 .9 .9 .9" class="s3_1">9+ Years of Experience in Motion Design </text>
+<text x="66" y="241.2" dx="0 0 0 0 0 0 0 -.1 0 0 0 0 0 0 -.1 0 0" class="s4_1">Core Competencies </text>
+<text x="68.8" y="279.9" class="s5_1">• </text>
+<text x="89.4" y="279.9" dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 .1 0" class="s6_1">Motion Graphics &amp; Design </text>
+<text x="68.8" y="298.2" class="s5_1">• </text>
+<text x="89.4" y="298.2" dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 .1 0 .1" class="s6_1">3D Animation &amp; Rendering </text>
+<text x="68.8" y="316.4" class="s5_1">• </text>
+<text x="89.4" y="316.4" dx="0 0 0 0 0 0 0 0 .1 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0" class="s6_1">Real-Time 3D Virtual Production </text>
+<text x="68.8" y="334.7" class="s5_1">• </text>
+<text clip-path="url(#c4_1)" x="89.4" y="334.7" dx="0 0 0 0 0 0 0 0 0 .1 0 0 .1 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 .1" class="s6_1">Visual Effects &amp; Compositing </text>
+<text x="328.3" y="279.9" class="s5_1">• </text>
+<text x="348.9" y="279.9" dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 .1 0 0 0 .1 .1 0 .1 0 0 0 0 0 .1 0 0" class="s6_1">Storyboarding &amp; Concept Development </text>
+<text x="328.3" y="298.2" class="s5_1">• </text>
+<text x="348.9" y="298.2" dx="0 0 0 0 0 0 0 0 0 0 .1 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 0 0 .1" class="s6_1">Adobe Creative Cloud Mastery </text>
+<text x="328.3" y="316.4" class="s5_1">• </text>
+<text x="348.9" y="316.4" dx="0 0 0 0 0 0 0 0 0 0 0 0 0 -.1 0 0 .1 0 0 0 0 0 0 0 0 0 0 .1 .1 0 0 0 0 0 0 .1" class="s6_1">Typography &amp; Kinetic Type Animation </text>
+<text x="328.3" y="334.7" class="s5_1">• </text>
+<text clip-path="url(#c5_1)" x="348.9" y="334.7" dx="0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 .1 0" class="s6_1">Look Development </text>
+<text x="623" y="279.9" class="s5_1">• </text>
+<text x="643.6" y="279.9" dx="0 0 0 0 0 0 .1 0 0 0 0 .1 0 0 .1 0 0 0 0 0 .1 0 0 0 0 0 0 .1 0 .1" class="s6_1">Pipeline Automation/Scripting </text>
+<text x="623" y="298.2" class="s5_1">• </text>
+<text x="643.6" y="298.2" dx="0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 .1 0 0 .1 .1 0" class="s6_1">AI Generative Design Workflows </text>
+<text x="623" y="316.4" class="s5_1">• </text>
+<text x="643.6" y="316.4" dx="0 0 0 0 0 0 .1 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 .1" class="s6_1">Project &amp; Team Leadership </text>
+<text x="623" y="334.7" class="s5_1">• </text>
+<text clip-path="url(#c6_1)" x="643.6" y="334.7" dx="0 0 0 0 0 0 .1 0 0 .1 0 0 0 0 0 0 0 0 0 0 .1 0 0 .1" class="s6_1">Multi-Platform Delivery </text>
+<text x="66" y="379.4" class="s4_1">Software </text>
+<text x="68.8" y="418.3" class="s5_1">• </text>
+<text clip-path="url(#c7_1)" x="89.4" y="418.3" dx="0 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 .1 0 0 .1 .1" class="s6_1">Adobe After Effects </text>
+<text x="68.8" y="436.5" class="s5_1">• </text>
+<text x="89.4" y="436.5" dx="0 0 0 0 0 0 0 0 .1 0 0 0 .1 0 .1 0" class="s6_1">Unreal Engine 5 </text>
+<text x="68.8" y="454.8" class="s5_1">• </text>
+<text x="89.4" y="454.8" dx="0 0 0 0 .1 0 0 0 0 0 0 0 .1 .1 0 0 0 0 0" class="s6_1">Cinema 4D/Cineware </text>
+<text x="68.8" y="473" class="s5_1">• </text>
+<text clip-path="url(#c7_1)" x="89.4" y="473" dx="0 0 0 .1 0 0 0 .1" class="s6_1">Blender </text>
+<text x="261.4" y="418.3" class="s5_1">• </text>
+<text clip-path="url(#c8_1)" x="282.1" y="418.3" dx="0 0 0 0 0 .1 0 0 .1 0 0 0 .1" class="s6_1">OctaneRender </text>
+<text x="261.4" y="436.5" class="s5_1">• </text>
+<text x="282.1" y="436.5" dx="0 0 0 0 0 .1 0 0 0 .1 0 0 0" class="s6_1">Premiere Pro </text>
+<text x="261.4" y="454.8" class="s5_1">• </text>
+<text x="282.1" y="454.8" dx="0 0 0 0 0 0 0 0 .1" class="s6_1">Audition </text>
+<text x="261.4" y="473" class="s5_1">• </text>
+<text clip-path="url(#c8_1)" x="282.1" y="473" dx="0 0 0 0 0 0 0 0 0 .1" class="s6_1">Photoshop </text>
+<text x="405.7" y="418.3" class="s5_1">• </text>
+<text clip-path="url(#c9_1)" x="426.3" y="418.3" dx="0 0 0 0 0 0 0 0 .1 0 0 0" class="s6_1">Illustrator </text>
+<text x="405.7" y="436.5" class="s5_1">• </text>
+<text x="426.3" y="436.5" class="s6_1">Figma </text>
+<text x="405.7" y="454.8" class="s5_1">• </text>
+<text x="426.3" y="454.8" dx="0 0 0 0 0 0 0 0 .1 0 .1 .1" class="s6_1">LottieFiles </text>
+<text x="405.7" y="473" class="s5_1">• </text>
+<text clip-path="url(#c9_1)" x="426.3" y="473" dx="0 0 0 0 .1 0 0 0 0 .1 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 .1 0 0 .1" class="s6_1">Stable Diffusion/Midjourney </text>
+<text x="632.4" y="418.3" class="s5_1">• </text>
+<text clip-path="url(#ca_1)" x="653" y="418.3" dx="0 0 0 0 .1 0 0 0 0 0 0 .1 0 .1 0 .1 0 0 0 0 .1 0 0 0 0 0 .1" class="s6_1">ExtendScript (expressions) </text>
+<text x="632.4" y="436.5" class="s5_1">• </text>
+<text x="653" y="436.5" dx="0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 .1" class="s6_1">FFmpeg Automation </text>
+<text x="632.4" y="454.8" class="s5_1">• </text>
+<text x="653" y="454.8" dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0" class="s6_1">JavaScript/jQuery </text>
+<text x="632.4" y="473" class="s5_1">• </text>
+<text clip-path="url(#ca_1)" x="653" y="473" dx="0 0 0 0 0 0 0 0 0 0 .1" class="s6_1">HTML + CSS </text>
+<text x="66" y="517.7" dx="0 0 0 0 0 0 -.1 0 -.1 0 0 0 0 0 -.1 0 0 0 0 -.1 0 0 0 0" class="s4_1">Professional Experience </text>
+<text x="66" y="556.5" class="s6_1">S</text>
+<text x="73.7" y="556.5" class="s7_1">AGEBRUSH </text>
+<text x="129.7" y="556.5" class="s6_1">C</text>
+<text x="138" y="556.5" dx="0 0 -.1 0 0 0 0 0 0" class="s7_1">OMMUNITY </text>
+<text x="194" y="556.5" class="s6_1">C</text>
+<text x="202.2" y="556.5" class="s7_1">HURCH</text>
+<text x="237.6" y="556.5" class="s6_1">, </text>
+<text x="243.5" y="556.5" class="s6_1">A</text>
+<text x="251.4" y="556.5" dx="0 0 0 0 0 -.1 0 0 0 0" class="s7_1">LBUQUERQUE</text>
+<text x="319.7" y="556.5" class="s6_1">, </text>
+<text x="325.6" y="556.5" class="s6_1">NM, </text>
+<text x="351.4" y="556.5" class="s6_1">A</text>
+<text x="359.2" y="556.5" class="s7_1">PRIL </text>
+<text x="383.2" y="556.5" class="s6_1">2024 </text>
+<text x="414.4" y="556.5" dx="0 0 -.1" class="s7_1">TO </text>
+<text x="430.4" y="556.5" class="s6_1">P</text>
+<text x="438.5" y="556.5" class="s7_1">RESENT </text>
+<text x="66" y="574.8" dx="0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0" class="s8_1">MOTION DESIGNER </text>
+<text x="93.5" y="593" class="s5_1">• </text>
+<text x="114.1" y="593" dx="0 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1" class="s6_1">Orchestrated the end-to-end motion lifecycle for flagship promotional campaigns (e.g., Easter @ Sagebrush), from rigorous pre- </text>
+<text x="114.1" y="611.2" dx="0 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.2 -.1 -.1 -.2 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2" class="s6_1">visualization and look development to final rendering, procedural versioning/transcoding, and format-localized asset delivery </text>
+<text x="114.1" y="629.5" dx="0 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1" class="s6_1">across multiple platforms. </text>
+<text x="93.5" y="647.7" class="s5_1">• </text>
+<text x="114.1" y="647.7" dx="0 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 0 -.2 -.2 -.1 -.1 -.2" class="s6_1">Lead-engineered the church’s first exterior projection-mapping installation—wrapping the courtyard façade (360°) of </text>
+<text x="114.1" y="666" dx="0 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 0 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.1 -.1 -.2 -.2" class="s6_1">Sagebrush’s Riverside campus (NM) with seamless imagery driven by Unreal Engine 5, edge-blended via Pixera across a 6 × laser </text>
+<text x="114.1" y="684.2" dx="0 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2" class="s6_1">stack, frame-accurately locked to FOH lighting &amp; audio via SMPTE timecode. </text>
+<text x="93.5" y="702.4" class="s5_1">• </text>
+<text x="114.1" y="702.4" dx="0 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2" class="s6_1">Federated a self-hosted render farm of on-prem, network-linked GPU workstations, auto-scaling the fleet instances to slash 4K </text>
+<text x="114.1" y="720.7" dx="0 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.1" class="s6_1">OpenEXR frame render times by ~80% and turning multi-day queues into same-day photoreal sermon-bumper iterations. </text>
+<text x="93.5" y="738.9" class="s5_1">• </text>
+<text x="114.1" y="738.9" dx="0 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2" class="s6_1">Templatized lower-thirds, end-cards, etc. using After Effects Essential Graphics (.mogrt), allowing editors to alter and transform </text>
+<text x="114.1" y="757.2" dx="0 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1" class="s6_1">them directly inside of Premiere, considerably reducing revision cycles. </text>
+<text x="93.5" y="775.4" class="s5_1">• </text>
+<text x="114.1" y="775.4" dx="0 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 0 -.2 -.1 0 -.2 -.1 -.1 -.2 -.1 0 -.2 0 -.2 -.1 -.2 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2" class="s6_1">Automated final-mile delivery with Python + FFmpeg, generating multi-aspect-ratio masters (16:9, 9:16, 1:1) and CALM-Act– </text>
+<text x="114.1" y="793.7" dx="0 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2" class="s6_1">compliant audio (-24 LKFS), then batching uploads with VAST tags for instant trafficking. </text>
+<text x="93.5" y="811.9" class="s5_1">• </text>
+<text x="114.1" y="811.9" dx="0 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2" class="s6_1">Architected modular, data-driven motion-graphics packages for addressable OTT, OLV, OLA, and DCO campaigns, empowering </text>
+<text x="114.1" y="830.1" dx="0 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 0 -.2 -.1 -.1 -.1 -.2 -.1 -.1" class="s6_1">the ad server to auto-assemble 500 + localized permutations per flight. Ensured every version shipped with IAB VAST 4.2 XML, </text>
+<text x="114.1" y="848.4" dx="0 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1" class="s6_1">ACIF-registered creative IDs, and CTV-safe bitrate/loudness specs. </text>
+<text x="93.5" y="866.6" class="s5_1">• </text>
+<text x="114.1" y="866.6" dx="0 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.2 -.1 -.1 -.2" class="s6_1">Drove creative and technical growth by mentoring the team in sophisticated motion design principles, including procedural </text>
+<text x="114.1" y="884.9" dx="0 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.1 -.1" class="s6_1">animation with After Effects scripting &amp; expressions and the implementation advanced compositing techniques, resulting in a </text>
+<text x="114.1" y="903.2" dx="0 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1" class="s6_1">measurable improvement in output quality and team velocity. </text>
+<text x="66" y="939.7" class="s6_1">U</text>
+<text x="75.4" y="939.7" class="s7_1">NIFIED </text>
+<text x="109.9" y="939.7" class="s6_1">D</text>
+<text x="118.8" y="939.7" class="s7_1">IGITAL </text>
+<text x="152.1" y="939.7" class="s6_1">D</text>
+<text x="161" y="939.7" class="s7_1">ESIGN </text>
+<text x="193" y="939.7" class="s6_1">A</text>
+<text x="200.8" y="939.7" class="s7_1">SSOCIATES </text>
+<text transform="matrix(0.75 0 0 1 258.2 939.7)" class="s6_1">– </text>
+<text x="266.8" y="939.7" dx="0 0 .1 0 -3.1" class="s6_1">SAP,® </text>
+<text x="300.4" y="939.7" class="s6_1">B</text>
+<text x="308.9" y="939.7" dx="0 0 0 .1" class="s7_1">LACK</text>
+<text x="334" y="939.7" class="s6_1">B</text>
+<text x="342.6" y="939.7" class="s7_1">ERRY </text>
+<text x="367.9" y="939.7" class="s6_1">® </text>
+<text x="376.3" y="939.7" class="s9_1">[</text>
+<text x="380.3" y="939.7" class="sa_1">ET AL</text>
+<text x="405.4" y="939.7" class="s9_1">.], </text>
+<text x="418.3" y="939.7" class="s6_1">L</text>
+<text x="425.2" y="939.7" class="s7_1">OS </text>
+<text x="441.3" y="939.7" class="s6_1">A</text>
+<text x="449.2" y="939.7" class="s7_1">NGELES</text>
+<text x="487.5" y="939.7" class="s6_1">, </text>
+<text x="493.4" y="939.7" class="s6_1">CA, </text>
+<text x="515.4" y="939.7" class="s6_1">D</text>
+<text x="524.2" y="939.7" class="s7_1">ECEMBER </text>
+<text x="572.8" y="939.7" class="s6_1">2019 </text>
+<text x="604" y="939.7" class="s7_1">TO </text>
+<text x="620" y="939.7" class="s6_1">A</text>
+<text x="627.9" y="939.7" class="s7_1">UGUST </text>
+<text x="664.4" y="939.7" dx="0 0 0 0 -.1" class="s6_1">2022 </text>
+<text x="66" y="957.9" dx="0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" class="s8_1">LEAD MOTION GRAPHICS ARTIST </text>
+<text x="93.5" y="976.2" class="s5_1">• </text>
+<text x="114.1" y="976.2" dx="0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 .1 0 0 0 .1 0 0 0 0 0 0 0 .1 0 0 0 .1 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 .1 0 0 0 0 .1 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 .1 0 0 0 0 .1 0 0 0 0 0 0 .1 0 0 .1 0 0 0 0 0 0 0 0 0 0 .1 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" class="s6_1">Directed cross-functional strike teams of designers, editors, and VFX artists on enterprise-scale animated ad campaigns for </text>
+<text x="114.1" y="994.4" dx="0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 .1 0 0 0 .1 0 .1 0 0 .1 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 .1 0 0 0 0 0 0 .1 0 .1 0 0 0 0 .1 0 0 0" class="s6_1">Fortune 100 clients, instituting real-time collaboration practices and agile rituals to keep story, design, and engineering in </text>
+<text x="114.1" y="1012.7" dx="0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 .1 0 0 0 0 0 0 0 0 0 0 .1 0 0 0 0 .1 0 0" class="s6_1">lock-step from brief to delivery. </text>
+<text x="93.5" y="1030.9" class="s5_1">• </text>
+<text x="114.4" y="1030.9" dx="0 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.1" class="s6_1">Pioneered AI-augmented motion pipelines, integrating Adobe Firefly and other Sensei-powered tools to trim storyboard-to- </text>
+<text x="114.4" y="1049.1" dx="0 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.2 0 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2" class="s6_1">final-render cycles. These efficiency optimizations freed ~25-50% more bandwidth for creative polish, boosted repeat-client </text>
+<text x="114.4" y="1067.4" dx="0 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 0 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1" class="s6_1">bookings by 22%, and positioned the studio as an early mover in AI-for-design. </text>
+<text x="93.5" y="1085.6" class="s5_1">• </text>
+<text x="114.4" y="1085.6" dx="0 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.2 -.1 -.2" class="s6_1">Owned end-to-end motion production for enterprise solution videos, translating VO scripts into interactive Figma storyboards, </text>
+<text x="114.4" y="1103.8" dx="0 -.2 -.2 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.1 0 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.1 -.1 -.2 -.2 -.2 -.1 -.2" class="s6_1">crafting bespoke vector assets/kits, and compositing 3D assets, stock, and parametric cel animation into compelling, persuasive </text>
+<text x="114.4" y="1122.1" dx="0 -.2 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.2 -.2 -.1 -.1 -.2 -.2 -.1 -.2 -.1 -.1 -.2 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1 -.2 -.1 -.2 -.1 -.1" class="s6_1">narratives that closed six-figure deals. </text>
+<path d="M266.2 240.1h602M315.1 516.2H868.2M163.9 378.1H868.3" class="g3_1"/>
+
+</g>
+
+<style>
+
+@font-face {
+	font-family: BodoniURW-Med_75;
+	src: url("fonts/BodoniURW-Med_75.woff") format("woff");
+}
+
+@font-face {
+	font-family: SourceSansPro-Bold_72;
+	src: url("fonts/SourceSansPro-Bold_72.woff") format("woff");
+}
+
+@font-face {
+	font-family: SourceSansPro-Italic_70;
+	src: url("fonts/SourceSansPro-Italic_70.woff") format("woff");
+}
+
+@font-face {
+	font-family: SourceSansPro-Regular_6-;
+	src: url("fonts/SourceSansPro-Regular_6-.woff") format("woff");
+}
+
+@font-face {
+	font-family: SourceSansPro-SemiBold_77;
+	src: url("fonts/SourceSansPro-SemiBold_77.woff") format("woff");
+}
+
+@font-face {
+	font-family: SymbolMT_6z;
+	src: url("fonts/SymbolMT_6z.woff") format("woff");
+}
+
+</style>
+
+</svg>

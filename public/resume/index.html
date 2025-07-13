@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; background-color: #333; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        .magazine-spread { display: flex; justify-content: center; align-items: flex-start; gap: 1vw; padding: 2vh 2vw; width: 100%; height: 100%; box-sizing: border-box; }
+        .svg-page-container { flex: 1; max-width: 50%; max-height: 96vh; background-color: white; display: flex; align-items: center; justify-content: center; }
+        .svg-page-container svg { width: 100%; height: auto; max-height: 96vh; display: block; }
+        .spinner { border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        /* Style for annotation hotspots */
+        .svg-page-container a rect:hover { fill: rgba(255, 255, 0, 0.3); }
+    </style>
+</head>
+<body>
+
+    <div class="magazine-spread">
+        <div id="page-1" class="svg-page-container"><div class="spinner"></div></div>
+        <div id="page-2" class="svg-page-container"><div class="spinner"></div></div>
+    </div>
+
+    <script>
+        // --- CONFIGURATION ---
+        const pagePaths = { 1: './1.svg', 2: './2.svg' };
+        const annotationsPath = './annotations.json';
+        const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
+
+        /**
+         * Applies hyperlink annotations to a loaded SVG element.
+         * This function is now included again.
+         */
+        function applyAnnotationsToSvg(svgElement, pageNumber, allAnnotationsData) {
+            const pageAnnotations = allAnnotationsData.pages.find(p => p.page === pageNumber);
+            if (!pageAnnotations || !pageAnnotations.annotations) {
+                console.warn(`No annotations found for page ${pageNumber}.`);
+                return;
+            }
+
+            const linkAnnotations = pageAnnotations.annotations.filter(
+                anno => anno.type === 'Link' && anno.action && anno.action.type === 'URI'
+            );
+
+            linkAnnotations.forEach(anno => {
+                const [x, y, width, height] = anno.bounds;
+                const anchor = document.createElementNS(SVG_NAMESPACE, 'a');
+                anchor.setAttribute('href', anno.action.uri);
+                anchor.setAttribute('target', '_blank'); // Open links in a new tab
+
+                const rect = document.createElementNS(SVG_NAMESPACE, 'rect');
+                rect.setAttribute('x', x);
+                rect.setAttribute('y', y);
+                rect.setAttribute('width', width);
+                rect.setAttribute('height', height);
+                rect.setAttribute('fill', 'transparent'); // Invisible clickable area
+
+                anchor.appendChild(rect);
+                svgElement.appendChild(anchor);
+            });
+        }
+
+        async function initializeViewer() {
+            try {
+                // First, fetch the single annotations file
+                const annotationsResponse = await fetch(annotationsPath);
+                if (!annotationsResponse.ok) throw new Error('Could not load annotations.json');
+                const allAnnotationsData = await annotationsResponse.json();
+
+                // Create a fetch promise for each page
+                const pagePromises = Object.entries(pagePaths).map(async ([pageNum, url]) => {
+                    const container = document.getElementById(`page-${pageNum}`);
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`Could not load page ${pageNum}`);
+                    const svgText = await response.text();
+                    
+                    container.innerHTML = svgText; // Replace spinner with SVG
+                    const svgElement = container.querySelector('svg');
+                    
+                    // Apply annotations to the newly loaded SVG
+                    if (svgElement) {
+                        applyAnnotationsToSvg(svgElement, parseInt(pageNum), allAnnotationsData);
+                    }
+                });
+
+                await Promise.all(pagePromises);
+
+            } catch(error) {
+                console.error("Error initializing viewer:", error);
+                document.querySelector('.magazine-spread').innerHTML = `<p style="color:white; font-family:sans-serif; text-align:center;">${error.message}</p>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeViewer);
+    </script>
+</body>
+</html>
