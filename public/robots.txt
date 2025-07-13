@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /robots.txt
+Allow: /*.json
+Allow: /CNAME
+Allow: /MTP_RESUME_2024.pdf
+Allow: /*.svg
+Allow: /README.md
+
+Disallow: /_archived/
+Disallow: /distJS/
+Disallow: /*.html
+Disallow: /*.pdf
+Disallow: /*.js
+Disallow: /*.css
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
