@@ -1,58 +1,60 @@
 // vite.config.js
-import { defineConfig }     from 'vite';
-import { viteStaticCopy }   from 'vite-plugin-static-copy';
-import { terser }           from 'rollup-plugin-terser';
-import { minify }           from 'terser';          // for public JS
+import { defineConfig } from 'vite';
+import { terser }       from 'rollup-plugin-terser';
+
+import { minify }  from 'terser';
+import postcss     from 'postcss';
+import cssnano     from 'cssnano';
+
+function minifyPublicAssets() {
+  return {
+    name: 'minify-public-assets',
+    apply: 'build',
+    async generateBundle(_, bundle) {
+      for (const file of Object.values(bundle)) {
+        if (file.type !== 'asset') continue;           // only .source assets
+
+        if (file.fileName.endsWith('.js')) {           // ── JS ──
+          const { code } = await minify(file.source.toString(), {
+            ecma: 2020,
+            compress: true,
+            mangle: true,
+            format: { comments: false }
+          });
+          file.source = code;
+
+        } else if (file.fileName.endsWith('.css')) {   // ── CSS ──
+          file.source = (
+            await postcss([cssnano()]).process(file.source.toString(), {
+              from: undefined
+            })
+          ).css;
+        }
+      }
+    }
+  };
+}
 
 export default defineConfig({
-  base: '/',                                   // custom CNAME → root
+  base: '/',
   build: {
     outDir: 'dist',
-    assetsDir: '.',                            // place files at dist root
-    cssCodeSplit: false,                       // a single CSS bundle
+    assetsDir: '.',              // put everything at dist/ root
+    cssCodeSplit: false,
     rollupOptions: {
       input: 'src/main.js',
       output: {
-        entryFileNames: 'main.js',             // fixed names
+        entryFileNames: 'main.js',
         chunkFileNames: 'chunk-[hash].js',
         assetFileNames: info =>
-          info.name?.endsWith('.css') ? 'main.css' : '[name][extname]',
+          info.name?.endsWith('.css') ? 'main.css' : '[name][extname]'
       },
       plugins: [
-        terser({ format: { comments: false } }) // extra squeeze for bundled JS
+        terser({ format: { comments: false } })  // squeezes bundled JS
       ]
     }
   },
   plugins: [
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'public/**/*',                  // copy every file
-          dest: '.',                           // preserve structure
-          transform: async (code, filepath) => {
-            // Minify standalone CSS from public/
-            if (filepath.endsWith('.css')) {
-              const postcss = (await import('postcss')).default;
-              const cssnano = (await import('cssnano')).default;
-              return (
-                await postcss([cssnano()]).process(code, { from: undefined })
-              ).css;
-            }
-            // Minify standalone JS from public/
-            if (filepath.endsWith('.js')) {
-              const { code: min } = await minify(code.toString(), {
-                ecma: 2020,
-                compress: true,
-                mangle: true,
-                format: { comments: false }
-              });
-              return min;
-            }
-            // Copy anything else verbatim
-            return code;
-          }
-        }
-      ]
-    })
+    minifyPublicAssets()          // squeezes every copied JS/CSS file
   ]
 });
