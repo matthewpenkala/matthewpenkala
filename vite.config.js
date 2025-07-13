@@ -1,31 +1,49 @@
 // vite.config.js
-import { defineConfig } from 'vite';
+import { defineConfig }    from 'vite';
+import { viteStaticCopy }  from 'vite-plugin-static-copy';
+import { terser }          from 'rollup-plugin-terser';
 
 export default defineConfig({
-  base: '/',                 // custom domain -> root
+  base: '/',
   build: {
     outDir: 'dist',
-    assetsDir: '.',          // put JS & CSS in dist/ root
-    cssCodeSplit: false,     // bundle all imported CSS into ONE file
+    assetsDir: '.',          // main.js & main.css at dist root
+    cssCodeSplit: false,
     rollupOptions: {
       input: 'src/main.js',
       output: {
-        // --- no hash on the entry bundle ---
         entryFileNames: 'main.js',
-
-        // keep dynamic chunks hashed (rare in your setup, but safe)
         chunkFileNames: 'chunk-[hash].js',
-
-        // Rename every emitted asset (CSS, fonts, images) deterministically
-        assetFileNames: (assetInfo) => {
-          // Turn the single CSS bundle into main.css
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'main.css';
-          }
-          // Everything else keeps its original name (no hash)
-          return '[name][extname]';
-        }
+        assetFileNames: (info) =>
+          info.name?.endsWith('.css') ? 'main.css' : '[name][extname]',
+        // Minify ONLY the standalone JS files copied from public/
+        plugins: [
+          terser({
+            include: ['../public/**/*.js'],
+            format: { comments: false }
+          })
+        ]
       }
     }
-  }
+  },
+  plugins: [
+    // Copy everything in public/ to dist/ and minify CSS on the fly
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/**/*',
+          dest: '.',                 // keep same relative paths
+          transform: async (code, filepath) => {
+            if (filepath.endsWith('.css')) {
+              const postcss = (await import('postcss')).default;
+              const cssnano = (await import('cssnano')).default;
+              const result = await postcss([cssnano()]).process(code, { from: undefined });
+              return result.css;      // ← minified CSS
+            }
+            return code;              // JS already minified by terser above
+          }
+        }
+      ]
+    })
+  ]
 });
